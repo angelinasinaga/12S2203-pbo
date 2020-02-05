@@ -10,6 +10,7 @@
  * @author 10-12s18068 Richardo Simanjuntak
  */
     import java.util.ArrayList;
+    import java.util.Scanner;
 public class Main {
     
     /* program emtry point */
@@ -66,12 +67,20 @@ public class Main {
     }
     
     //challenge
-    ArrayList<Integer> number = new ArrayList<Integer>();
-    for (int i = 0; i < 19; ++i){
-        number.add(i);
+    ArrayList<ArrayList<Integer>> number = new ArrayList<ArrayList<Integer>>();
+    System.out.print("Enter your number : ");
+    int jumlah_data = new Scanner(System.in).nextInt();
+    for (int x = 0; x < jumlah_data; x++){
+        number.add(new ArrayList<Integer>());
+        for(int y = 0; y < jumlah_data; y++){
+            number.get(x).add(x+y);
+        }
     }
-    for (int j = 0; j < number.size(); j++){
-        System.out.println(number.get(j) + " " + number.get(j+1) + " " + number.get(j+2) + " " + number.get(j+3) + " " + number.get(j+4) + " " + number.get(j+5) + " " + number.get(j+6) + " " + number.get(j+7) + " " + number.get(j+8) + " " + number.get(j+9));
+    for (int x = 0; x < jumlah_data; x++){
+        for (int y = 0; y < jumlah_data; y++){
+            System.out.print(number.get(x).get(y) + " ");
+        }
+        System.out.println();
     }
     }
 }
